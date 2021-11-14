@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "knight-hacks-2021-project",
+  "private_key_id": "1a467152397f323d68ebda12b1fa290837f1c683",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDTLnPh4O9elmtt\nZ/N9GUpJh9E2SRhvaxPUtxqTQRVuniggHufQMGr+e+2ZKABFSR5nRxfEufEUZfln\nBV1HdhApGJifP3afnmonLexla005NmaTiMOeF5UIG67qDEwYwOER4yJk/rBcNmLN\nXPqrw1uObzysMPv0mljRwHqMjS1ixwKxBaxXXpD1kH3QZhUZLl3j4no8VYONDBjR\nf0AGOAP11xqac8qkJyqk3HXG3IusaC94kRV87t2/2TSWHwS2wNBIeEHl9KJsc1pa\nS7RHnbu6fWIeZU638vAUa4ydZZT9sgA4Wki739hOP/eVgKPZ//eanGM14LWTMOKl\njeUXAP6HAgMBAAECggEAAKAwt/X0D8D4JkF6OZgQ528FjMKDVOxb1G2NHGre1AHA\nPqdC1vqLw/hmDXG8ixjOl0F0Fdtyuhwo1HBu1A09CNrdxx7r2rjpRTcLXT3253tH\nnF1gXKFNtF1yJ6hbzX9FiiJI+miKhdD6rZZoMLMLLzEmOo1Hy6BzqzQZyR+5EwKu\n4s5JTgna03eSUGlxE8yh6bCT2TjmIJ6LUjUCd6Z0yQNRuNcdfW7fwDg33rdF30kP\nVv2lCNWqR2w5iz+SJvxxBh4vEnDbmpaBt3Qr1wK5YJhKk6/ik3lnXKwMBYZBcorB\nWoUtvy+967NvLjBOFtsdLd51Oo0QuSNiFD53YdHhUQKBgQDrb4jQK5rGVwZIGTt3\nGn4lwdlfwIeoL7ZpeRuPOApRHM+7r4RlO60lGrJ0IybOzKw4VpWqCyC6VPWRGTUh\nTUuHEzdBpCCpveKVeZW+PvdtDu6yOX+PFGZ+53w9jacWRNy9diCMYmk0sZyDX/vI\npdE88iN1nDz+IfPx3Du+CBfCWQKBgQDloJS82C+O6k125oAWHEqT7GrlRlv6l8XJ\nMzy5NQezQ6mFmkPjJ5BPXFY7IdEBl/XSWYYGewavqXtDyJShNaSk774CsPDLjjQF\ngSryIh6Wu+w2UASuaJ9Pa8AJQXO85OiS2B68CA3zBO/Xvd9w+7UNDsaJBDrfNpHl\ni0Ydvz/r3wKBgDqMkC+EyIbOmYdQjxM9iWWGYbKIRLQ0uV5dedcSDq7BRX/dVEWA\no7x4eSycmUgQajvQfIO/JLJx8mfVJvtTJ5c91h4C3QSZbkHR7MVVD18VuZKk7e39\nGsgwdRsxoP3Ovj53o/yFdLhf+xZIxmrNoc1QQjU7V4ezleDt7gWCKbZxAoGABjOi\nEL+d+TQmx3FOQEqfUQNvl6Wg0lHLC7YQi8f830CSkYMrFjV5VkteINa2+F4MS5QT\nZJVqBtCC/b+rE/eI7NN0xEnXFwhOK1/jswps3RFSPd1HYxZ8Rv7X/uf/ojhkd6LS\noa1uAwQ9HgyIvlpt915Qyl6M4H5uzk5GpIMHzO0CgYEAt92h26o+PNE5b27MBqHk\nmHuRXGn3PxHhqryYUh7uOF/0Wfgdd1Z1SZLcR6fpi7ljWKuUefG2yx7z1l9em7zX\nZFHh63ly4JdX4pQBSUvDSCx8SECeT6jr5hBAY2+JKhb8Y+s1IduffKQpEl+iTLIo\nEUiMhIGpiOo39FHd8eBSfeI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "knight-hacks-2021-project@knight-hacks-2021-project.iam.gserviceaccount.com",
+  "client_id": "114332282737491271783",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/knight-hacks-2021-project%40knight-hacks-2021-project.iam.gserviceaccount.com"
+}
