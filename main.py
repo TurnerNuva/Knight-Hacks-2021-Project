@@ -7,12 +7,11 @@ import pysoundfile as sf
 
 import time
 
-import Adafruit_SSD1306
-
-from PIL import Image
-from PIL import ImageDraw
-from PIL import ImageFont
-
+from board import SCL, SDA
+import busio
+from PIL import Image, ImageDraw, ImageFont
+import adafruit_ssd1306
+import digitalio
 
 from google.cloud import speech
 import io
@@ -100,62 +99,73 @@ def transcribe_file(speech_file):
 #Display to oled screen
 #===============================================================================================================
 def display_message(response_string):
-    # 128x32 display with hardware I2C:
-    disp = Adafruit_SSD1306.SSD1306_128_64(rst=None, i2c_bus=1, gpio=1) # setting gpio to 1 is hack to avoid platform detection
+    spi = busio.SPI(board.SCK, MOSI=board.MOSI)
+    reset_pin = digitalio.DigitalInOut(board.D4) # any pin!
+    cs_pin = digitalio.DigitalInOut(board.D5)    # any pin!
+    dc_pin = digitalio.DigitalInOut(board.D6)    # any pin!
 
-    # Initialize library.
-    disp.begin()
+    oled = adafruit_ssd1306.SSD1306_SPI(128, 32, spi, dc_pin, reset_pin, cs_pin)
 
     # Clear display.
-    disp.clear()
-    disp.display()
+    oled.fill(0)
+    oled.show()
 
     # Create blank image for drawing.
     # Make sure to create image with mode '1' for 1-bit color.
-    width = disp.width
-    height = disp.height
-    image = Image.new('1', (width, height))
+    width = oled.width
+    height = oled.height
+    image = Image.new("1", (width, height))
 
     # Get drawing object to draw on image.
     draw = ImageDraw.Draw(image)
 
     # Draw a black filled box to clear the image.
-    draw.rectangle((0,0,width,height), outline=0, fill=0)
+    draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
     # Draw some shapes.
     # First define some constants to allow easy resizing of shapes.
     padding = -2
     top = padding
-    bottom = height-padding
+    bottom = height - padding
     # Move left to right keeping track of the current x position for drawing shapes.
     x = 0
+
 
     # Load default font.
     font = ImageFont.load_default()
 
+    # Alternatively load a TTF font.  Make sure the .ttf font file is in the
+    # same directory as the python script!
+    # Some other nice fonts to try: http://www.dafont.com/bitmap.php
+    # font = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 9)
+
     while True:
-        # Write two lines of text.
-        draw.text((x, top),       "test",  font=font, fill=255)
-        draw.text((x, top+8),     "test", font=font, fill=255)
-        draw.text((x, top+16),    "test",  font=font, fill=255)
-        draw.text((x, top+24),    "test",  font=font, fill=255)
-        draw.text((x, top+32),    "test",  font=font, fill=255)
-        draw.text((x, top+40),    "test",  font=font, fill=255)
+
+        # Draw a black filled box to clear the image.
+        draw.rectangle((0, 0, width, height), outline=0, fill=0)
+
+        # Write four lines of text.
+
+        draw.text((x, top + 0), "Testing", font=font, fill=255)
+        draw.text((x, top + 8), "This ", font=font, fill=255)
+        draw.text((x, top + 16), "Display", font=font, fill=255)
+        draw.text((x, top + 25), "Out", font=font, fill=255)
+
         # Display image.
-        disp.image(image)
-        disp.display()
-        time.sleep(.1)
+        oled.image(image)
+        oled.show()
+        time.sleep(0.1)
 
 
-def main():
-    
+    def main():
+        
+        #Jetson here
 
+        audio_file = record_audio()
 
-    audio_file = record_audio()
+        response_string = transcribe_file(audio_file)
 
-    response_string = transcribe_file(audio_file)
-
-    display_message(response_string)
+        display_message(response_string)
 
 
 if __name__ == '__main__':
