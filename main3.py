@@ -112,17 +112,13 @@ def transcribe_file(speech_file):
 
         data = result.alternatives[0].transcript
     
-    if response.results == None:
-        return "NULL"
-
-    else:
         return data
 
 #Display to oled screen
 #===============================================================================================================
 
 def display_message(response_string):
-	ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
+	ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
 	ser.flush()
 	#ser.write(b"test")
 	ser.write(str(response_string).encode('utf-8'))		
